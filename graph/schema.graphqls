@@ -1,0 +1,40 @@
+type Category {
+  id: ID!
+  name: String!
+  description: String
+  courses: [Course!]!
+}
+
+type Course {
+  id: ID!
+  name: String!
+  description: String
+  category: Category!
+}
+
+input NewCategory {
+  name: String!
+  description: String
+}
+
+input newCourse {
+  categoryId: ID!
+  name: String!
+  description: String
+}
+
+# Used to consult
+type Query {
+  categories: [Category!]!
+  category(id: ID): Category
+  courses: [Category!]!
+  course(id: ID): Course
+}
+
+# used when need to mutate data (insert, delete, update...)
+# create category and course
+#nameFunction(params) : return
+type Mutation {
+  createCategory(input: NewCategory): Category!
+  createCourse(input: newCourse): Course!
+}
