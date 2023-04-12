@@ -1,5 +1,5 @@
 ## Simple GraphQL project using postgreSQL
-## Full Cycle Course - Communication between systems
+# Full Cycle Course - Communication between systems
 
 ## Quick start
 1. Start the graphql server
@@ -38,10 +38,6 @@ mutation createCourse {
   createCourse(input: {name: "Full Cycle", description: "Technology courses", categoryId: "1"}) {
     id
     name
-  } {
-    id
-    name
-    description
   }
 }
 
