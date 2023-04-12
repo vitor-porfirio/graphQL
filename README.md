@@ -13,11 +13,15 @@
       
 3. Create and configure your database cmd/server/server.go
 
-		host     = "localhost"
-		port     = 5432
-       		user     = "postgres"
-      		password = "YOUR-PASSWORD"
-       		dbname   = "YOUR-DATABASE"
+```go
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "postgres"
+	password = "3711521"
+	dbname   = "graphqldb"
+  )
+```
 
 4. You can use the following code on GraphQL playground:
      
