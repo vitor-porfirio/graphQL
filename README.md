@@ -13,8 +13,8 @@
       
 3. Create and configure your database cmd/server/server.go
 
-	     host     = "localhost"
-	     port     = 5432
+	host     = "localhost"
+	port     = 5432
        user     = "postgres"
        password = "YOUR-PASSWORD"
        dbname   = "YOUR-DATABASE"
@@ -47,4 +47,4 @@ query QueryCategories {
     name
     description
   }
-}```
+}
