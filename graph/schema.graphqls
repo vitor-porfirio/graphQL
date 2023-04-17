@@ -26,9 +26,9 @@ input newCourse {
 # Used to consult
 type Query {
   categories: [Category!]!
-  category(id: ID): Category
-  courses: [Category!]!
-  course(id: ID): Course
+  courses: [Course!]!
+  # category(id: ID): Category
+  # course(id: ID): Course
 }
 
 # used when need to mutate data (insert, delete, update...)

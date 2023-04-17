@@ -24,7 +24,6 @@ const (
 	user     = "postgres"
 	password = "3711521"
 	dbname   = "graphqldb"
-	// dbname   = "postgres"
   )
 
 func main() {
@@ -38,6 +37,7 @@ func main() {
 	defer db.Close()
 
 	categoryDb := database.NewCategory(db)
+	courseDB := database.NewCourse(db)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -46,6 +46,7 @@ func main() {
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{
 		CategoryDB: categoryDb,
+		CourseDB: courseDB,
 	}}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
