@@ -35,7 +35,7 @@ mutation createCategory {
 }
 
 mutation createCourse {
-  createCourse(input: {name: "Full Cycle", description: "Technology courses", categoryId: "1"}) {
+  createCourse(input: {name: "Full Cycle", description: "Technology courses", categoryId: "017c5181-1f26-4308-9918-b224b5ca1330"}) {
     id
     name
   }
@@ -46,5 +46,37 @@ query QueryCategories {
     id
     name
     description
+  }
+}
+
+query QueryCategoriesWithCourses {
+  categories {
+    id
+    name
+    description
+    courses {
+      id
+      name
+    }
+  }
+}
+
+query queryCourses {
+  courses {
+    id
+    name
+  }
+}
+
+query QueryCoursesWithCategory {
+  courses {
+    id
+    name
+    description
+    category {
+      id
+      name
+      description
+    }
   }
 }
